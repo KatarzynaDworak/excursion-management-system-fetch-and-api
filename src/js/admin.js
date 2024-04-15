@@ -146,6 +146,7 @@ async function addNewExcursionAdmin(e) {
     Adult_cost: content[2].value,
     Child_cost: content[3].value,
   };
+  console.log('content: ', content);
 
   const excursionsApi = new ExcursionsAPI();
   const response = await excursionsApi.addExcursion(excursion);
@@ -153,5 +154,11 @@ async function addNewExcursionAdmin(e) {
   console.log("excursion edited:", newExcursion);
   document.querySelector(".excursions").innerHTML = "";
   builtExcursionsAdminUi();
+
+  content.forEach(field => 
+    { 
+      field.value = ''; 
+    })
+
 }
 
