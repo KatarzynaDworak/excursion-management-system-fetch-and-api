@@ -14,6 +14,10 @@ function Init() {
     e.preventDefault();
     editExcursionAdmin(e);
   });
+  document.querySelector(".close").addEventListener("submit", (e) => {
+    e.preventDefault();
+    closeEditPanel(e);
+  });
 }
 
 async function builtExcursionsAdminUi() {
@@ -107,6 +111,17 @@ function openEditPanel(e, id) {
   const edit_panel = document.querySelector(".edit_panel");
   edit_panel.style.display = "block";
   edit_panel.setAttribute("id", id);
+}
+
+function closeEditPanel(e) {
+  console.log('uzupełnić funkcje')
+  e.preventDefault();
+  const panel = document.querySelector(".panel");
+  panel.classList.remove("disabledPanel");
+
+  const edit_panel = document.querySelector(".edit_panel");
+  edit_panel.style.display = "none";
+  // edit_panel.setAttribute("id", id);
 }
 
 async function editExcursionAdmin(e) {

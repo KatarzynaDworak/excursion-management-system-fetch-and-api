@@ -86,15 +86,6 @@ async function handleAddToBasket(excursion, e) {
         const adults = parseInt(adultsInput.value);
         const children = parseInt(childrenInput.value);
 
-        // const ordersApi = new OrdersApi();
-
-        // await ordersApi.createOrder({
-        //     id: new Date().toISOString(), // tworzę "randomowe", unikalne ID
-        //     excursion,
-        //     Adult_Number: adults,
-        //     Child_Number: children
-        // });
-
         adultsInput.value = '0';
         childrenInput.value = '0';
 
