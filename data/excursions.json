@@ -1,25 +1,32 @@
 {
   "excursions": [
     {
-      "Title": "Weekend nad morzem 4",
-      "Description": "Szum fal, piasek pod stopami i urocze zachody słońca na pewno skuszą wielu z Was. Zerknijcie zatem na najlepsze nadmorskie miejscówki z naszej oferty.",
-      "Adult_cost": "3500",
-      "Child_cost": "2250",
+      "Title": "Wiosna w górach",
+      "Description": "Zapraszamy do Holimo. Czekają tu na Ciebie górskie krajobrazy, bez tłumów i bez kolejek, za to z kilometrami tras pieszych, biegowych i rowerowych. I klimatyczny hotel, z dala od zgiełku cywilizacji, z dużym basenem, SPA i saunami oraz pyszną kuchnią.",
+      "Adult_cost": "2450",
+      "Child_cost": "1850",
       "id": "dWDxoyF"
     },
     {
-      "Title": "Weekend nad morzem 5",
-      "Description": "Szum fal, piasek pod stopami i urocze zachody słońca na pewno skuszą wielu z Was. Zerknijcie zatem na najlepsze nadmorskie miejscówki z naszej oferty.",
-      "Adult_cost": "1650",
-      "Child_cost": "860",
+      "Title": "Odetchnij na łonie natury",
+      "Description": "Odpocznij od zgiełku miasta. Odnajdź swoje wymarzone miejsce gdzie naprawdę wypoczniesz.  Spędź lato nad jeziorem — Hotel nad jeziorem z basenem, kręgielnią i atrakcjami dla dzieci. Akceptujemy zwierzęta.",
+      "Adult_cost": "1850",
+      "Child_cost": "1250",
       "id": "bN9V03w"
     },
     {
-      "Title": "Weekend nad morzem 5",
+      "Title": "Weekend nad morzem",
       "Description": "Szum fal, piasek pod stopami i urocze zachody słońca na pewno skuszą wielu z Was. Zerknijcie zatem na najlepsze nadmorskie miejscówki z naszej oferty.",
-      "Adult_cost": "2500",
+      "Adult_cost": "2250",
       "Child_cost": "1650",
       "id": "en19sk_"
+    },
+    {
+      "Title": "Kraków w weekend",
+      "Description": "Odwiedzisz Zamek Królewski na Wawelu i zachwycający Kościół Mariacki. Przespacerujesz się po brukowanych ulicach Starego Miasta i Kazimierza.",
+      "Adult_cost": "1500",
+      "Child_cost": "850",
+      "id": "1nv1p5-"
     }
   ],
   "orders": [
