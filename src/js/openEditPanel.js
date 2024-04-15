@@ -1,11 +1,18 @@
-const openEditPanel = (e,id) => {
-    e.preventDefault();
-    const panel = document.querySelector(".panel"); 
-    panel.classList.add("disabledPanel")
+export class OrdersApi {
+    async createOrder(order) {
+        console.log(order);
+        const response = await fetch("http://localhost:3000/orders", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(order),
+        });
 
-    const edit_panel = document.querySelector(".edit_panel")
-    edit_panel.style.display="block";
-    edit_panel.setAttribute("id", id);  
+        if (!response.ok) {
+            throw new Error("Failed to add new order");
+        }
+
+        return await response.json();
+    }
 }
-
-export default openEditPanel;
