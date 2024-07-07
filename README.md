@@ -115,6 +115,17 @@ Validates customer data and handles order placement with error feedback.
            });
          }
 
+**6. Fetch API for Data Communication**: utilize the fetch() method for communicating with the backend API, ensuring modern and efficient data handling.
+
+            export class ExcursionsAPI {
+              async getExcursions() {
+                const response = await fetch("http://localhost:3000/excursions");
+                return await response.json();
+              }
+            
+              async addExcursion(excursion) {
+                const response = await
+
 ### Fetch
 
 Nasza komunikacja z uruchomionym API będzie się odbywać przy pomocy `fetch()`, który został opisany w materiałach tego modułu.
