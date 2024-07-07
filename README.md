@@ -1,121 +1,188 @@
+# Thanks for viewing my Project ✨
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+![ADD SCREEN](./screen.png) 
+<br />
 
-&nbsp;
+## :star: **Implementation:**
+In this project, I used Webpack and JSON Server. It has additional configuration.
 
-
-# JavaScript: API oraz FETCH
-
-## Wprowadzenie
-
-Wracamy do naszego zlecenia związanego z wycieczkami. Chcemy przebudować kod, wykorzystując nowo poznane informacje.
-
-Dzielimy naszą aplikację na dwie części. 
-
-### Client
-
-To część związana z tym, co może zrobić użytkownik:
-* wybrać wycieczkę przez wprowadzenie ilości zamawianych biletów w odpowiednie pola formularza i kliknięcie `dodaj do zamówienia`. Wiąże się to z:
-    * walidacją danych
-    * dodawaniem zamówienia do panelu z prawej strony, tj. do koszyka
-    * aktualizowaniem ceny za całość
-* potwierdzić zamówienie poprzez wprowadzenie imienia, nazwiska oraz adresu email do pola zamówienia i kliknięcie `zamawiam`. Wiąże się to z:
-    * walidacją danych
-    * wysłaniem zamówienia do bazy danych (u nas to będzie API uruchomione dzięki JSON Server)
-    * wyczyszczeniem koszyka.
-
-Pliki powiązane:
-* `./src/index.html`
-* `./src/js/client.js`
-* `./src/css/client.css`
-
-### Admin    
-Panel zarządzania wycieczkami zapisanymi w bazie danych. Jego funkcjonalności to: 
-* dodawanie wycieczek
-* usuwanie wycieczek
-* modyfikowanie wycieczek.
-
-Pliki powiązane:
-* `./src/admin.html`
-* `./src/js/admin.js`
-* `./src/css/admin.css`
-
-## Implementacja
-
-### Webpack
-
-W tym zadaniu wykorzystamy webpacka, którego omawialiśmy w materiale dotyczącym ES2015+. 
-
-Zauważ, że posiada on dodatkową konfigurację, która obsługuje podział aplikacji na dwie części. Zwróć szczególną uwagę na tzw. [chunki](https://webpack.js.org/glossary/#c).
-
-Webpack zajmuje się również wczytaniem plików CSS (zobacz importy w `client.js` oraz `admin.js`) – dzieje się to dzięki odpowiednim loaderom dla plików o rozszerzeniu `.css` w `webpack.config.js`. Style są wczytywane do `<head>`, więc nie zdziw się, że pliki CSS nie są generowane.
-
-Pamiętaj, aby przed uruchomieniem webpacka zainstalować wszystkie zależności komendą
-```
-npm install
-```
-Potem dopiero możesz go uruchomić poprzez `npm start`.
-
-Jeśli chcesz odpalić wersję `client`, to wystarczy wpisać w przeglądarkę `http://localhost:8080/index.html`. Natomiast `admin` jest dostępny pod adresem: `http://localhost:8080/admin.html`.
-
-> **Uwaga!** Jeśli nie widzisz poprawnych numerów linii kodu dla błędów w konsoli, to prawdopodobnie nie masz włączonej obsługi source maps dla plików JavaScript. Możesz to zmienić w [ustawieniach przeglądarki Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps).
-
-### JSON Server
-
-Podczas przerabiania materiałów zainstalowaliśmy globalnie JSON Server, dlatego teraz wystarczy, że go uruchomimy. Pamiętaj, że bez tego nasze API nie będzie działać. 
-
-Odpalamy kolejny terminal (webpack już jest uruchomiony w jednym) i przechodzimy do katalogu głównego z zadaniem. Następnie wpisujemy do terminala:
-```
-json-server --watch ./data/excursions.json
-```
-
-Od teraz API będzie dostępne pod adresem: http://localhost:3000. Zauważ jednak, że w pliku mamy dwa różne zasoby, czyli:
-* excursions
-* orders.
-
-W zależności od tego, na jakich danych będziesz chciał pracować, do `fetch()` przekażesz inny URL, tj.:
-* http://localhost:3000/excursions – zarządzanie wycieczkami
-* http://localhost:3000/orders – zarządzanie zamówieniami.
-
-### Fetch
-
-Nasza komunikacja z uruchomionym API będzie się odbywać przy pomocy `fetch()`, który został opisany w materiałach tego modułu.
-
-Choć `fetch()` jest [wspierany przez najnowsze przeglądarki](https://caniuse.com/#feat=fetch), to nie powinniśmy zapominać o wsparciu dla tych starszych.
-
-W takim przypadku możemy wykorzystać tzw. [polyfill](https://pl.wikipedia.org/wiki/Polyfill), który doda niewspieraną przez przeglądarkę funkcjonalność.
-
-Możesz do tego wykorzystać [whatwg-fetch](https://github.com/github/fetch).
-
-### ExcursionsAPI
-
-W katalogu `./src/js` znajdziesz plik `ExcursionsAPI.js`, który zawiera klasę o tej samej nazwie.
-
-Został on stworzony, aby przechowywać w jednym miejscu całą komunikację z API.
-
-To tutaj powinny być zdefiniowane metody, które odpytują API, np. pozwalają pobrać wycieczki z bazy lub je do niej dodać.
-
-Ta klasa będzie używana zarówno po stronie `client`, jak i `admin`, dlatego też została już zaimportowana do obu plików JS odpowiedzialnych za każdą z części.
-
-### Prototypy
-
-Zauważ, że w kodzie występują prototypy (`.*--prototype`). Są one używane tylko po to, aby ułatwić prezentację danych.
-
-Docelowo mają być one niewidoczne – możesz je ukryć przy pomocy CSS (`display: none`). Warto je jednak wykorzystać do skopiowania struktury kodu HTML, aby nie musieć budować jej od podstaw w kodzie JS.
-
-## Podsumowanie
-
-Postaraj się wykonać to zadanie w taki sposób, aby zarządzanie wycieczkami było wygodne, a ich zamawianie intuicyjnie. 
-
-Miej cały czas z tyłu głowy, że może kiedyś nasz kod znów będzie trzeba przebudować lub wykorzystać w innym projekcie, dlatego powinien on być jak najbardziej elastyczny (zasada pojedynczej odpowiedzialności), a nazwy plików, klas i metod – dopasowane do zawartości i logiki działania tych elementów (tzw. [samodokumentujący się kod](https://en.wikipedia.org/wiki/Self-documenting_code)).
-
-Jeśli uznasz to za słuszne, możesz zmodyfikować kod HTML i CSS, aby zwiększyć funkcjonalność całego rozwiązania.
+To install Webpack, run:
 
 
-&nbsp;
+            npm install
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+After that, you can start the project by running:
+
+            npm start
+
+At the end write down in the terminal: 
+
+            json-server --watch ./data/excursions.json
+
+
+<br />
+<br />
+
+## Main goal of my work was to:
+**1. Admin Panel for Excursions**: create a user-friendly admin interface for managing excursion details, including adding, editing, and deleting excursions.
+
+**2. Client-side Excursion Display**: implement a client-side interface for users to view available excursions, add them to their basket, and place orders.
+
+**3. Order Management**: develop functionalities for users to submit their excursion orders and for admins to manage these orders efficiently.
+
+**4. Data Validation and Error Handling**: ensure robust validation for both excursion management and order placement, with clear error messages to guide users.
+<br />
+
+## Solutions provided in the project
+**1. Admin Interface for Excursions:**
+The admin panel allows admins to manage excursions dynamically.
+
+         async function builtExcursionsAdminUi() {
+           document.querySelector(".excursions").innerHTML = "";
+           const excursionsApi = new ExcursionsAPI();
+           const excursions = await excursionsApi.getExcursions();
+           excursions.forEach((excursion) => {
+             const li = document.createElement("li");
+             li.className = "excursions__item";
+             const header = document.createElement("header");
+             const title = document.createElement("h2");
+             title.className = "excursions__title";
+             title.textContent = excursion.Title;
+             const description = document.createElement("p");
+             description.className = "excursions__description";
+             description.textContent = excursion.Description;
+             header.appendChild(title);
+             header.appendChild(description);
+             li.appendChild(header);
+             document.querySelector(".excursions").appendChild(li);
+           });
+         }
+
+**2. Form Handling for Excursions:**
+Provides form handling to add new excursions and edit existing ones.
+
+         document.querySelector("form").addEventListener("submit", (e) => {
+           e.preventDefault();
+           addNewExcursionAdmin(e);
+         });
+         
+         document.querySelector(".edit").addEventListener("submit", (e) => {
+           e.preventDefault();
+           editExcursionAdmin(e);
+         });
+
+**3. Client-side Excursion Display and Basket Management:**
+Users can view excursions, add them to a basket, and place orders.
+
+         async function buildExcursionsUi() {
+           const excursionsApi = new ExcursionsAPI();
+           const excursions = await excursionsApi.getExcursions();
+           excursions.forEach(excursion => {
+             const li = document.createElement('li');
+             li.className = 'excursions__item';
+             const header = document.createElement('header');
+             const title = document.createElement('h2');
+             title.className = 'excursions__title';
+             title.textContent = excursion.Title;
+             const description = document.createElement('p');
+             description.className = 'excursions__description';
+             description.textContent = excursion.Description;
+             header.appendChild(title);
+             header.appendChild(description);
+             li.appendChild(header);
+             document.querySelector('.excursions').appendChild(li);
+           });
+         }
+         
+**4. Order Placement and Error Handling:**
+Validates customer data and handles order placement with error feedback.
+
+         async function attachOrderHandler() {
+           const orderForm = document.querySelector(".panel__order");
+           orderForm.addEventListener("submit", async (event) => {
+             event.preventDefault();
+             const nameInput = document.querySelector('input[name="name"]');
+             const emailInput = document.querySelector('input[name="email"]');
+             const name = nameInput.value.trim();
+             const email = emailInput.value.trim();
+             if (!isCustomerDataValid(name, email)) {
+               displayError(orderForm, "Please fill in the required fields correctly.");
+               return;
+             }
+             await orderBasketItems(name, email, orderForm);
+             nameInput.value = "";
+             emailInput.value = "";
+           });
+         }
+
+**6. Fetch API for Server Communication**:
+Utilizes the fetch() method for API communication. A polyfill can be used for older browsers.
+
+            async function fetchData() {
+              try {
+                const response = await fetch('http://localhost:3000/excursions');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                return data;
+              } catch (error) {
+                console.error('Fetch error:', error);
+              }
+            }
+            
+            // Using a polyfill for fetch
+            import 'whatwg-fetch';
+            
+**7. HTML Prototypes for Simplified UI Development**:
+Prototypes in the HTML are used to simplify the UI structure and development process. These prototypes can be hidden using CSS.
+
+            <template class="excursions__item--prototype">
+              <li class="excursions__item">
+                <header>
+                  <h2 class="excursions__title"></h2>
+                  <p class="excursions__description"></p>
+                </header>
+                <form class="excursions__form">
+                  <!-- Form fields here -->
+                </form>
+              </li>
+            </template>
+            
+            <style>
+              .excursions__item--prototype {
+                display: none;
+              }
+            </style>
+<br />
+<br />
+
+## 🛠️ Languages and Tools used: 
+
+<img align="left" alt="JavaScript" width="50px" src="https://raw.githubusercontent.com/github/explore/379d8d145b878a5b7a1c2a5b5800b1d82d5c8c8f/topics/javascript/javascript.png" />
+
+<img align="left" alt="HTML5" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+
+<img align="left" alt="CSS3" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+
+<img align="left" alt="Git" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" />
+
+<img align="left" alt="GitHub" width="50px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
+
+<img align="left" alt="Terminal" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" />
+
+<img align="left" alt="Visual Studio Code" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
+
+<br />
+<br />
+<br />
+<br />
+
+## :blue_heart:  You can find me on:
+<br/>
+
+[<img align="left" alt="Katarzyna Dworak LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/katarzynadworakk/)
+
+ 
+<br />
+
+### Thanks
+To my Mentor - devmentor.pl – for creating the task and for the code review.
