@@ -173,9 +173,9 @@ Prototypes in the HTML are used to simplify the UI structure and development pro
 
 <img align="left" alt="npm" width="50px" src="https://raw.githubusercontent.com/github/explore/main/topics/npm/npm.png" />
 
-<img align="left" alt="API" width="50px" src="https://raw.githubusercontent.com/github/explore/main/topics/api/api.png" />
+<img align="left" alt="API" width="50px" src="https://simpleicons.org/icons/restapi.svg" />
 
-<img align="left" alt="Fetch" width="50px" src="https://raw.githubusercontent.com/github/explore/main/topics/fetch/fetch.png" />
+<img align="left" alt="Fetch" width="50px" src="https://simpleicons.org/icons/fetchdotjs.svg" />
 
 <br />
 <br />
