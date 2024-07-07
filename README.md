@@ -177,7 +177,6 @@ Prototypes in the HTML are used to simplify the UI structure and development pro
 
 <img align="left" alt="Fetch" width="50px" src="https://raw.githubusercontent.com/github/explore/main/topics/fetch/fetch.png" />
 
-
 <br />
 <br />
 <br />
