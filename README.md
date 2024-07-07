@@ -157,7 +157,7 @@ Prototypes in the HTML are used to simplify the UI structure and development pro
 
 ## 🛠️ Languages and Tools used: 
 
-<img align="left" alt="JavaScript" width="50px" src="https://raw.githubusercontent.com/github/explore/379d8d145b878a5b7a1c2a5b5800b1d82d5c8c8f/topics/javascript/javascript.png" />
+<img align="left" alt="JavaScript" width="50px" src="https://raw.githubusercontent.com/github/explore/6b6e5f3b0d2a1533cbe59a77bca83bfa78e4f14a/topics/javascript/javascript.png" />
 
 <img align="left" alt="HTML5" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
 
