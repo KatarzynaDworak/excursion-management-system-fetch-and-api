@@ -7,9 +7,6 @@ let totalCostNumber = 0;
 export async function addToBasket(basketItem) {
     basket.push(basketItem);
 
-    // const existingOrders = document.querySelectorAll('.summary__item');
-    // existingOrders.forEach(order => order.remove());
-
     const li = document.createElement('li');
     li.className = 'summary__item';
 
@@ -76,9 +73,6 @@ export async function orderBasketItems(name, email, form) {
 
     basket = [];
     totalCostNumber = 0;
-
-
-
     
     removeAllChildNodes(document.querySelector('.panel__summary'));
     displayTotalPrice();
