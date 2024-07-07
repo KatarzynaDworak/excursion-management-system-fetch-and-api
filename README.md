@@ -115,34 +115,43 @@ Validates customer data and handles order placement with error feedback.
            });
          }
 
-**6. Fetch API for Data Communication**: utilize the fetch() method for communicating with the backend API, ensuring modern and efficient data handling.
+**6. Fetch API for Server Communication**:
+Utilizes the fetch() method for API communication. A polyfill can be used for older browsers.
 
-            export class ExcursionsAPI {
-              async getExcursions() {
-                const response = await fetch("http://localhost:3000/excursions");
-                return await response.json();
+            async function fetchData() {
+              try {
+                const response = await fetch('http://localhost:3000/excursions');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                return data;
+              } catch (error) {
+                console.error('Fetch error:', error);
               }
+            }
             
-              async addExcursion(excursion) {
-                const response = await
+            // Using a polyfill for fetch
+            import 'whatwg-fetch';
+            
+**7. HTML Prototypes for Simplified UI Development**:
+Prototypes in the HTML are used to simplify the UI structure and development process. These prototypes can be hidden using CSS.
 
-### Fetch
-
-Nasza komunikacja z uruchomionym API będzie się odbywać przy pomocy `fetch()`, który został opisany w materiałach tego modułu.
-
-Choć `fetch()` jest [wspierany przez najnowsze przeglądarki](https://caniuse.com/#feat=fetch), to nie powinniśmy zapominać o wsparciu dla tych starszych.
-
-W takim przypadku możemy wykorzystać tzw. [polyfill](https://pl.wikipedia.org/wiki/Polyfill), który doda niewspieraną przez przeglądarkę funkcjonalność.
-
-Możesz do tego wykorzystać [whatwg-fetch](https://github.com/github/fetch).
-
-### Prototypy
-
-Zauważ, że w kodzie występują prototypy (`.*--prototype`). Są one używane tylko po to, aby ułatwić prezentację danych.
-
-Docelowo mają być one niewidoczne – możesz je ukryć przy pomocy CSS (`display: none`). Warto je jednak wykorzystać do skopiowania struktury kodu HTML, aby nie musieć budować jej od podstaw w kodzie JS.
-
-
+            <template class="excursions__item--prototype">
+              <li class="excursions__item">
+                <header>
+                  <h2 class="excursions__title"></h2>
+                  <p class="excursions__description"></p>
+                </header>
+                <form class="excursions__form">
+                  <!-- Form fields here -->
+                </form>
+              </li>
+            </template>
+            
+            <style>
+              .excursions__item--prototype {
+                display: none;
+              }
+            </style>
 <br />
 <br />
 
