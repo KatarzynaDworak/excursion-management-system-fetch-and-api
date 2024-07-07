@@ -1,6 +1,6 @@
 # Thanks for viewing my Project ✨
 
-![ADD SCREEN](./screen.png) 
+![Excursion Management System](./screen1.png) 
 <br />
 
 ## :star: **Implementation:**
