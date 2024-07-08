@@ -4,21 +4,29 @@
 <br />
 
 ## :star: **Implementation:**
-In this project, I used Webpack and JSON Server. It has additional configuration.
+The project uses [Webpack](https://webpack.js.org/), [npm](https://www.npmjs.com/) and [JSON Server](https://www.npmjs.com/package/json-server/v/0.17.4). To run the app on your machine you should install all dependencies. Then create a localhost port and run your web explorer.
 
-To install Webpack, run:
+Let's start with installing all dependencies. Move to the app main workspace and run:
 
+            npm i
 
-            npm install
-
-After that, you can start the project by running:
+To create a localhost port you should type:
 
             npm start
 
-At the end write down in the terminal: 
+At the end you should write down in the terminal: 
 
             json-server --watch ./data/excursions.json
 
+From now on, the API will be available at: http://localhost:3000. However, note that in the file we have two different resources:
+
+- excursions
+- orders
+
+Depending on the data you want to work with, you will pass a different URL to fetch(), namely:
+
+            http://localhost:3000/excursions – managing excursions
+            http://localhost:3000/orders – managing orders
 
 <br />
 <br />
