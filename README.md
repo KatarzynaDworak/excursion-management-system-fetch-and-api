@@ -25,8 +25,8 @@ From now on, the API will be available at: http://localhost:3000. However, note 
 
 Depending on the data you want to work with, you will pass a different URL to fetch(), namely:
 
-[http://localhost:3000/excursions – managing excursions](http://localhost:3000/excursions – managing excursions)
-[http://localhost:3000/orders – managing orders](http://localhost:3000/orders – managing orders)
+[http://localhost:3000/excursions – managing excursions](http://localhost:3000/excursions) – managing excursions
+[http://localhost:3000/orders – managing orders](http://localhost:3000/orders) – managing orders
 
 <br />
 <br />
