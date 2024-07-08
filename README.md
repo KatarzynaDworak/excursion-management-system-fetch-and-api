@@ -191,4 +191,6 @@ Prototypes in the HTML are used to simplify the UI structure and development pro
 <br />
 
 ### Thanks
-To my Mentor - devmentor.pl – for creating the task and for the code review.
+To my Mentor - [devmentor.pl](https://devmentor.pl/) – for creating the task and for the code review.
+
+If you have any questions feel free to get in touch with me (contact in the [profile readme](https://github.com/katarzynadworak)).
