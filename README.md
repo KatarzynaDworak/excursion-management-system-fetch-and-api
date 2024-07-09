@@ -1,6 +1,8 @@
 # Thanks for viewing my Project ✨
 
-![Excursion Management System](./screen1.png) 
+https://github.com/KatarzynaDworak/excursion-management-system-fetch-and-api/assets/147186733/432abcbd-66df-42df-8203-0d4b3445c436
+
+
 <br />
 
 ## :star: **Implementation:**
