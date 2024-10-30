@@ -11,10 +11,9 @@ async function buildExcursionsUi() {
     const excursionsApi = new ExcursionsAPI();
     const excursions = await excursionsApi.getExcursions();
 
-
     excursions.forEach(excursion => {
         const li = document.createElement('li');
-        li.className = 'excursions__item  ';
+        li.className = 'excursions__item';
 
         const header = document.createElement('header');
         const title = document.createElement('h2');
@@ -28,7 +27,6 @@ async function buildExcursionsUi() {
         header.appendChild(title);
         header.appendChild(description);
 
-        //LEWA STRONA => TWORZYMY INPUT'Y I OPISY W WYCIECZKACH
         const form = document.createElement('form');
         form.className = `excursions__form field${excursion.id}`;
 
@@ -36,7 +34,7 @@ async function buildExcursionsUi() {
         adultContainer.className = 'excursions__field';
         adultContainer.innerHTML = `
             <label class="excursions__field-name">
-                Dorosły: <b>${excursion.Adult_cost}</b>PLN x <input value="0" class="excursions__field-input" name="adults" />
+                Dorosły: <b>${excursion.Adult_cost}</b> PLN x <input value="0" class="excursions__field-input" name="adults" />
             </label>
         `;
 
@@ -44,15 +42,13 @@ async function buildExcursionsUi() {
         childContainer.className = 'excursions__field';
         childContainer.innerHTML = `
             <label class="excursions__field-name">
-                Dziecko: <b>${excursion.Child_cost}</b>PLN x <input value="0" class="excursions__field-input" name="children" />
+                Dziecko: <b>${excursion.Child_cost}</b> PLN x <input value="0" class="excursions__field-input" name="children" />
             </label>
         `;
 
         const submitContainer = document.createElement('div');
-
         submitContainer.className = `excursions__field excursions__field--submit`;
 
-        //LEWA STRONA => DODAJEMY WYCIECZKĘ DO KOSZYKA
         const submitInput = document.createElement('input');
         submitInput.className = 'excursions__field-input excursions__field-input--submit';
         submitInput.value = 'dodaj do koszyka';
@@ -62,8 +58,7 @@ async function buildExcursionsUi() {
             await handleAddToBasket(excursion, event);
         });
 
-        submitContainer.appendChild(submitInput)
-
+        submitContainer.appendChild(submitInput);
         form.appendChild(adultContainer);
         form.appendChild(childContainer);
         form.appendChild(submitContainer);
@@ -76,6 +71,7 @@ async function buildExcursionsUi() {
 }
 
 async function handleAddToBasket(excursion, e) {
+    console.log("Wywołanie handleAddToBasket:", excursion);
     const form = e.target.parentElement.parentElement;
     const adultsInput = form.childNodes[0].childNodes[1].childNodes[3];
     const childrenInput = form.childNodes[1].childNodes[1].childNodes[3];
@@ -89,11 +85,13 @@ async function handleAddToBasket(excursion, e) {
         adultsInput.value = '0';
         childrenInput.value = '0';
 
-        addToBasket({
-            excursion,
-            Adult_Number: adults,
-            Child_Number: children
-        });
+        if (excursion.Title !== 'Ogrodzieniec') {
+            addToBasket({
+                excursion,
+                Adult_Number: adults,
+                Child_Number: children
+            });
+        }
     } else {
         displayError(form, "Proszę uzupełnić poprawnie wymagane pola");
     }

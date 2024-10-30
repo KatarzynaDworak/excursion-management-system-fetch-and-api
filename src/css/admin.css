@@ -5,10 +5,12 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f9fc;
+    font-family: 'Poppins', sans-serif;
     color: #333;
+    line-height: 1.6;
+    background-color: #f0f4f8;
 }
+
 
 ul {
     list-style: none;

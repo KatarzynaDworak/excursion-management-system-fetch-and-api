@@ -5,9 +5,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Poppins', sans-serif;
     color: #333;
+    line-height: 1.6;
+    background-color: #f0f4f8;
 }
 
 h1, h2, h3, h4 {
@@ -22,30 +23,101 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
-.panel {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 30px;
-    gap: 20px;
+.panel__form {
+    background-color: #f0f8ff; 
+    padding: 25px;
+    width: 45%; 
+    border: 1px solid #d4e2ec; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    color: #1C165C; 
 }
 
-.panel__excursions {
-    width: 70%;
+.order__total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1C165C; 
+    margin-bottom: 1rem;
+}
+
+.order__field-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order__field-submit {
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order__field-submit:hover {
+    background-color: #219150;
+}
+
+.panel__summary {
+    background-color: #1C165C; 
+    padding: 15px;
+    border-radius: 8px;
+    color: #FFFFFF; 
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary__item {
+    background-color: #2A237F; 
+    color: #FFFFFF; 
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary__item h3, .summary__prices, .summary__total-price {
+    color: #FFFFFF; 
+}
+
+.summary__btn-remove {
+    background-color: #ff6b6b;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.summary__btn-remove:hover {
+    background-color: #e63946;
 }
 
 .excursions {
+    list-style-type: none;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .excursions__item {
-    background-color: #ffffff;
+    background-color: #E2F3FE; 
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
@@ -61,44 +133,31 @@ h2 {
 
 .excursions__item h3 {
     font-size: 1.25rem;
-    color: #2980b9;
+    color: #1C165C;
+    font-weight: bold;
 }
 
-.excursions__item p {
+.excursions__item p, .excursions__field-name {
     font-size: 1rem;
-    color: #7f8c8d;
-    margin-top: 0.5rem;
+    color: #1C165C; 
+    line-height: 1.5;
 }
 
-.panel__form {
-    background-color: #f9fafb;
-    padding: 25px;
-    width: 30%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+.excursions__item--prototype {
+    display: none !important;
 }
 
-.uploader, .order {
-    border-bottom: 1px solid #e1e4e8;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-}
-
-button, .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    background-color: #3498db;
+.excursions__field-input--submit {
+    background-color: #89BCE2; 
     color: white;
-    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-button:hover, .btn:hover {
-    background-color: #2980b9;
+.excursions__field-input--submit:hover {
+    background-color: #76A4CC;
 }
