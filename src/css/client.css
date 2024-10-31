@@ -1,16 +1,22 @@
+/* Resetowanie marginesów i ustawienia domyślne */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Ustawienia globalne */
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #f0f4f8;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 20px;
 }
 
+/* Nagłówki */
 h1, h2, h3, h4 {
     color: #2c3e50;
     margin-bottom: 1rem;
@@ -23,84 +29,100 @@ h1 {
 }
 
 h2 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-.panel__form {
-    background-color: #f0f8ff; 
-    padding: 25px;
-    width: 45%; 
-    border: 1px solid #d4e2ec; 
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-    color: #1C165C; 
-}
-
-.order__total-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1C165C; 
-    margin-bottom: 1rem;
-}
-
-.order__field-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
+/* Przyciski */
+button, .btn, .excursions__field-input--submit {
+    background-color: #89BCE2;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+button:hover, .btn:hover, .excursions__field-input--submit:hover {
+    background-color: #76A4CC;
+}
+
+/* Styl przycisku Zamawiam */
 .order__field-submit {
-    background-color: #27ae60;
+    background-color: #4B0082;
     color: white;
     font-weight: bold;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-bottom: 20px; 
 }
 
 .order__field-submit:hover {
-    background-color: #219150;
+    background-color: #1C165C;
 }
 
+/* Struktura panelu */
+.panel {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 30px;
+    gap: 20px;
+}
+
+.panel__form {
+    background-color: #f0f8ff;
+    padding: 25px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #d4e2ec;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #1C165C;
+}
+
+/* Koszyk - podsumowanie zamówienia */
 .panel__summary {
-    background-color: #1C165C; 
-    padding: 15px;
-    border-radius: 8px;
-    color: #FFFFFF; 
-    font-size: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #7AA7CE;
+    color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Elementy wycieczki w koszyku */
 .summary__item {
-    background-color: #2A237F; 
-    color: #FFFFFF; 
+    display: block;
     padding: 15px;
+    background-color: #7AA7CE;
     border-radius: 8px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .summary__item h3, .summary__prices, .summary__total-price {
-    color: #FFFFFF; 
+    color: #FFFFFF;
+}
+
+.summary__item--prototype {
+    display: none;
 }
 
 .summary__btn-remove {
     background-color: #ff6b6b;
-    color: #fff;
+    color: white;
     font-weight: bold;
-    padding: 6px 10px;
-    border: none;
+    padding: 5px 10px;
     border-radius: 50%;
     cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.3s;
 }
 
@@ -108,6 +130,36 @@ h2 {
     background-color: #e63946;
 }
 
+.summary__title {
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.summary__prices {
+    font-size: 0.95rem;
+    color: #1C165C;
+    line-height: 1.4;
+    margin-top: 6px;
+}
+
+.summary__total-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.summary__total-price {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Lista wycieczek */
 .excursions {
     list-style-type: none;
     padding: 0;
@@ -117,7 +169,7 @@ h2 {
 }
 
 .excursions__item {
-    background-color: #E2F3FE; 
+    background-color: #E2F3FE;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
@@ -139,7 +191,7 @@ h2 {
 
 .excursions__item p, .excursions__field-name {
     font-size: 1rem;
-    color: #1C165C; 
+    color: #1C165C;
     line-height: 1.5;
 }
 
@@ -148,7 +200,7 @@ h2 {
 }
 
 .excursions__field-input--submit {
-    background-color: #89BCE2; 
+    background-color: #89BCE2;
     color: white;
     font-weight: bold;
     padding: 10px 15px;
@@ -160,4 +212,46 @@ h2 {
 
 .excursions__field-input--submit:hover {
     background-color: #76A4CC;
+}
+
+/* Responsywność */
+@media (min-width: 1024px) {
+    .panel {
+        flex-direction: row;
+    }
+
+    .panel__excursions {
+        width: 70%;
+    }
+
+    .panel__form {
+        width: 30%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .panel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel__excursions, .panel__form {
+        width: 80%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .panel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel__excursions, .panel__form {
+        width: 100%;
+    }
+
+    .excursions__item {
+        width: 100%;
+    }
 }
